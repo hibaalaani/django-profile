@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['https://django-profile.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['https://django-profile.onrender.com','hibaPy.pythonanywhere.com', 'localhost']
 
 
 # Application definition
