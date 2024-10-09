@@ -21,14 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
-SECRET_KEY = 'django-insecure-iqo_k)x54z3ndez$mxs^c(3de)d!=*n^m!3&&xa(=*-=b)6ko$'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
+# SECRET_KEY = 'django-insecure-iqo_k)x54z3ndez$mxs^c(3de)d!=*n^m!3&&xa(=*-=b)6ko$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost',]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'hibaPy.pythonanywhere.com']
 
 
 # Application definition
@@ -62,6 +62,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'https://hibaalaani.github.io',
     'http://localhost:5173',
+    'https://hibaPy.pythonanywhere.com'
 
 ]
 
@@ -155,17 +156,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-
+# I should un comment this in production
 # I added these extra setup in order to solve the deployment errors
 
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 
-# SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
-# CSRF_COOKIE_SECURE = True
-# CSRF_TRUSTED_ORIGINS = [
-#     'https://hibaPy.pythonanywhere.com',
-# ]
+CSRF_COOKIE_SECURE = True
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://hibaPy.pythonanywhere.com',
+'https://hibaalaani.github.io'
+]
 
 # LOGIN_URL = '/admin/login/'
 # LOGIN_REDIRECT_URL = '/admin/'
