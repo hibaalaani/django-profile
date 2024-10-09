@@ -21,14 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
-
+# SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
+SECRET_KEY = 'django-insecure-iqo_k)x54z3ndez$mxs^c(3de)d!=*n^m!3&&xa(=*-=b)6ko$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['https://django-profile.onrender.com','hibaPy.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',]
 
 
 # Application definition
@@ -48,13 +48,12 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-        'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
      'whitenoise.middleware.WhiteNoiseMiddleware',
     
 ]
@@ -159,12 +158,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # I added these extra setup in order to solve the deployment errors
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = [
-    'https://hibaPy.pythonanywhere.com',
-]
+# CSRF_COOKIE_SECURE = True
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://hibaPy.pythonanywhere.com',
+# ]
 
+# LOGIN_URL = '/admin/login/'
+# LOGIN_REDIRECT_URL = '/admin/'
