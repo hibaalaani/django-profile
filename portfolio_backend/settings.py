@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-iqo_k)x54z3ndez$mxs^c(3de)d!=*n^m!3&&xa(=*-=b)6ko$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'hibaPy.pythonanywhere.com']
@@ -160,17 +160,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # I should un comment this in production
 # I added these extra setup in order to solve the deployment errors
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://hibaPy.pythonanywhere.com',
-'https://hibaalaani.github.io'
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://hibaPy.pythonanywhere.com',
+# 'https://hibaalaani.github.io'
+# ]
 
 # LOGIN_URL = '/admin/login/'
 # LOGIN_REDIRECT_URL = '/admin/'
