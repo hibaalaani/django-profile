@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
       'corsheaders',
-      'be_portfolio'
+      'be_portfolio',
+       'rest_framework',
+   
+    
       
 ]
 
@@ -155,6 +158,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# related to the JWT 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+}
 
 
 # I should un comment this in production
@@ -174,3 +193,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # LOGIN_URL = '/admin/login/'
 # LOGIN_REDIRECT_URL = '/admin/'
+
+# payment setup
+
+
+
+
+
+AUTH_USER_MODEL = 'be_portfolio.CustomUser'
+
+# Ensure you have Stripe settings in place
+STRIPE_SECRET_KEY = 'your-stripe-secret-key'
+
+
+
+
+# to make sure it will not be overwritten to https , and will not through errors when we miss the trailing slash
+APPEND_SLASH = True
+SECURE_SSL_REDIRECT = False 

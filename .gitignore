@@ -1,1 +1,45 @@
-.env
+# Ignore node_modules and logs
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore build output
+dist/
+build/
+public/
+
+# Ignore environment variables
+.env*
+!.env.example  # if you want to keep an example file
+
+# Ignore cache and temporary files
+*.tmp
+*.log
+*.swp
+*~ 
+.vscode/
+__pycache__/
+
+# Ignore Django-specific files
+db.sqlite3
+media/
+
+# Python virtual environment
+venv/
+.venv/
+
+# Ignore IDE config files
+.idea/
+.DS_Store
+
+# Ignore package-lock.json if using yarn
+package-lock.json
+
+# Ignore coverage reports
+coverage/
+*.cover
+*.coverage
+*.log
+
+# Ignore Tailwind generated CSS
+**/tailwind.css
