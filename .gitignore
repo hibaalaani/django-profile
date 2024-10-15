@@ -43,3 +43,4 @@ coverage/
 
 # Ignore Tailwind generated CSS
 **/tailwind.css
+db.sqlite3
